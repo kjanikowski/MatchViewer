@@ -2,3 +2,6 @@ src/sss.png
 src/view/ball.jpg
 src/view/soccer.png
 /bin
+mecze.db
+sqlite-jdbc-3.21.0.jar
+

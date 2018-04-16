@@ -1,8 +1,10 @@
 package controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import db.create;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -25,6 +27,7 @@ public class MainController implements Initializable {
 	@FXML TableColumn<Mecz,Integer> wyn1;
 	@FXML TableColumn<Mecz,Integer> wyn2;
 	@FXML TableColumn<Mecz,String> dr2;
+    int tab[] = {0,0,0,0,0,0,0,0,0,0,0};
 	
 	PobLigi l = new PobLigi();
 
@@ -69,12 +72,23 @@ public class MainController implements Initializable {
 	                    	
 	                    }
 	                    
+	                    ArrayList<Mecz> mecz;
+
 	                    ObservableList<Mecz> lista = FXCollections.observableArrayList(
-	                			l.getListaLig().get(i).wczytajMecze()
+	                			mecz=l.getListaLig().get(i).wczytajMecze()
 	                			);
+
 	                    
+	                    if(tab[i]==0) {
+	                    create cr = new create(l.getListaLig().get(i).getNazwa(), mecz);
+	                    tab[i]=1;
+	                }
+	                    
+               
 	                    table.setItems(lista);
 	                    table.setVisible(true);
+	                    
+
 	                }
 	            });
 	            return cell ;
