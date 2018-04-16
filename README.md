@@ -1,8 +1,7 @@
 # MatchViewer
 
-MatchViewer allows to view list of played matches from a few polish leauges. Imports data from pomorskifutbol.pl
+MatchViewer allows to view list of played matches from a few polish leauges. App imports data from pomorskifutbol.pl and stores it using SQLite. 
 
-Stores data using SQLite
 
 JavaFX and Jsoup
 
